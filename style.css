@@ -195,7 +195,7 @@ body {
     transform: scale(1.1);
 }
 
-/* Contenedor e imágenes flotantes internas */
+/* ✅ Contenedor e imágenes flotantes internas - SIEMPRE HORIZONTAL */
 .herramientas-contenedor-flotantes {
     position: absolute;
     top: 0;
@@ -207,7 +207,6 @@ body {
     overflow: hidden;
 }
 
-/* ✅ PC: movimiento horizontal */
 .flotante-interno {
     position: absolute;
     top: 50%;
@@ -220,11 +219,11 @@ body {
 }
 
 @keyframes cadena-animacion {
-    0% { transform: translateX(100vw); }
-    100% { transform: translateX(-100%); }
+    0% { transform: translateX(100vw) translateY(-50%); }
+    100% { transform: translateX(-100%) translateY(-50%); }
 }
 
-/* ✅ Responsive Design */
+/* Responsive Design */
 @media (max-width: 600px) {
     .header-content {
         flex-direction: column;
@@ -252,20 +251,9 @@ body {
         padding: 10px;
     }
 
-    /* ✅ En móvil → movimiento vertical */
     .flotante-interno {
-        --tamano: 120px;
+        --tamano: 120px; /* logos más chicos en móvil */
         width: var(--tamano);
-        left: 50%;
-        top: auto;
-        transform: translateX(-50%);
-        animation: flotante-vertical 20s linear infinite;
-        animation-delay: calc(var(--i) * -5s);
-    }
-
-    @keyframes flotante-vertical {
-        0% { transform: translate(-50%, -150%); }
-        100% { transform: translate(-50%, 120vh); }
     }
 }
 
