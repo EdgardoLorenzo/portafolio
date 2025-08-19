@@ -67,7 +67,7 @@ body {
 .profile-pic-container {
     width: 250px;
     height: 250px;
-    border-radius: 10px; /* Borde redondeado */
+    border-radius: 10px;
     overflow: hidden;
     border: 5px solid var(--verde);
     box-shadow: 0 0 20px rgba(46, 204, 113, 0.6);
@@ -76,7 +76,7 @@ body {
 .profile-pic {
     width: 100%;
     height: 100%;
-    object-fit: contain; /* Para que la imagen se vea completa sin cortar */
+    object-fit: contain;
     object-position: center;
 }
 
@@ -86,13 +86,13 @@ body {
 
 /* Título principal animado */
 .titulo-animado {
-    font-size: 3rem; /* Título más grande */
+    font-size: 3rem;
     color: transparent;
     -webkit-background-clip: text;
     background-clip: text;
     background-image: linear-gradient(90deg, var(--verde) 0%, var(--negro-oscuro) 50%, var(--verde) 100%);
     background-size: 200% auto;
-    animation: brillo-animado 3s linear infinite; /* Animación de brillo constante */
+    animation: brillo-animado 3s linear infinite;
     margin: 0;
     letter-spacing: 2px;
 }
@@ -207,6 +207,7 @@ body {
     overflow: hidden;
 }
 
+/* ✅ PC: movimiento horizontal */
 .flotante-interno {
     position: absolute;
     top: 50%;
@@ -223,7 +224,7 @@ body {
     100% { transform: translateX(-100%); }
 }
 
-/* Responsive Design */
+/* ✅ Responsive Design */
 @media (max-width: 600px) {
     .header-content {
         flex-direction: column;
@@ -251,17 +252,20 @@ body {
         padding: 10px;
     }
 
-    /* Reglas específicas para pantallas móviles */
+    /* ✅ En móvil → movimiento vertical */
     .flotante-interno {
-        --tamano: 120px; /* Tamaño más pequeño en móviles */
+        --tamano: 120px;
         width: var(--tamano);
-        animation: cadena-movil-animacion 30s linear infinite; /* Animación más lenta y con más espacio */
-        animation-delay: calc(var(--i) * -6s);
+        left: 50%;
+        top: auto;
+        transform: translateX(-50%);
+        animation: flotante-vertical 20s linear infinite;
+        animation-delay: calc(var(--i) * -5s);
     }
-    
-    @keyframes cadena-movil-animacion {
-        0% { transform: translateX(100vw); }
-        100% { transform: translateX(-100%); }
+
+    @keyframes flotante-vertical {
+        0% { transform: translate(-50%, -150%); }
+        100% { transform: translate(-50%, 120vh); }
     }
 }
 
@@ -309,7 +313,7 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
 }
 
-/* Footer (con texto blanco) */
+/* Footer */
 .footer {
     text-align: center;
     padding: 20px;
