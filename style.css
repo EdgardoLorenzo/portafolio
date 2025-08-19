@@ -211,11 +211,9 @@ body {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    --tamano: 180px; /* Se aumenta el tamaño de los iconos */
+    --tamano: 180px;
     width: var(--tamano);
-    /* Se añade una sombra para que el logo se integre mejor en el fondo oscuro */
     filter: drop-shadow(0 0 10px rgba(46, 204, 113, 0.5));
-    /* Animación de cadena horizontal más lenta para evitar choques */
     animation: cadena-animacion 40s linear infinite;
     animation-delay: calc(var(--i) * -8s);
 }
@@ -223,6 +221,48 @@ body {
 @keyframes cadena-animacion {
     0% { transform: translateX(100vw); }
     100% { transform: translateX(-100%); }
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .header-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    .profile-pic-container {
+        width: 150px;
+        height: 150px;
+    }
+    .titulo-animado {
+        font-size: 1.8rem;
+    }
+    .main-content {
+        padding: 10px;
+    }
+    #menu-flotante {
+        top: auto;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        flex-wrap: wrap;
+        width: 90%;
+        justify-content: center;
+        gap: 10px;
+        padding: 10px;
+    }
+
+    /* Reglas específicas para pantallas móviles */
+    .flotante-interno {
+        --tamano: 120px; /* Tamaño más pequeño en móviles */
+        width: var(--tamano);
+        animation: cadena-movil-animacion 30s linear infinite; /* Animación más lenta y con más espacio */
+        animation-delay: calc(var(--i) * -6s);
+    }
+    
+    @keyframes cadena-movil-animacion {
+        0% { transform: translateX(100vw); }
+        100% { transform: translateX(-100%); }
+    }
 }
 
 /* Proyectos */
@@ -290,33 +330,4 @@ body {
 
 .footer a:hover {
     color: var(--blanco);
-}
-
-/* Responsive Design */
-@media (max-width: 600px) {
-    .header-content {
-        flex-direction: column;
-        text-align: center;
-    }
-    .profile-pic-container {
-        width: 150px;
-        height: 150px;
-    }
-    .titulo-animado {
-        font-size: 1.8rem;
-    }
-    .main-content {
-        padding: 10px;
-    }
-    #menu-flotante {
-        top: auto;
-        bottom: 20px;
-        left: 50%;
-        transform: translateX(-50%);
-        flex-wrap: wrap;
-        width: 90%;
-        justify-content: center;
-        gap: 10px;
-        padding: 10px;
-    }
 }
