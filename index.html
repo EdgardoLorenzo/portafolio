@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edgardo Lorenzo - Portafolio Profesional</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- Menú de navegación flotante -->
+<nav id="menu-flotante">
+    <a href="#acerca-de-mi">Sobre Mí</a>
+    <a href="#habilidades-blandas">Habilidades Blandas</a>
+    <a href="#herramientas-tecnicas">Herramientas Técnicas</a>
+    <a href="#proyectos">Proyectos</a>
+</nav>
+
+<!-- Encabezado con foto de perfil y título animado -->
+<header class="header">
+    <div class="header-content">
+        <!-- Contenedor para la foto -->
+        <div class="profile-pic-container">
+            <img src="WhatsApp Image 2025-07-30 at 17.01.41.jpeg" alt="Foto de perfil de Edgardo Lorenzo" class="profile-pic">
+        </div>
+        <div class="header-text">
+            <h1 class="titulo-animado">LICENCIADO EN ADMINISTRACIÓN</h1>
+            <p class="subtitulo-animado">con orientación administrativa contable</p>
+            <p class="subtitulo-animado">Apasionado por el management y la tecnología</p>
+        </div>
+    </div>
+</header>
+
+<main class="main-content">
+    
+    <!-- Sección Sobre Mí -->
+    <section id="acerca-de-mi" class="seccion">
+        <h2>📖 Acerca de mí</h2>
+        <p>Soy un <strong>Licenciado en Administración</strong> con una profunda pasión por el management y el análisis financiero. Mi objetivo es <strong>seguir aprendiendo para convertirme en un experto en el área de la administración</strong>, implementando mis conocimientos en el campo de la tecnología para optimizar y automatizar procesos organizacionales.</p>
+        <p>Actualmente me encuentro aprendiendo el lenguaje de programación <strong>Python</strong>, y poniendo a prueba estos conocimientos adquiridos en el ámbito de las ciencias económicas, una prueba de ello es la creación de este portafolio web. En <strong>Proyecto 1</strong>, se podrá visualizar un video de una implementación de sistema de inventario en tiempo real con carga manual desde el comando de Python y su utilidad para procesar directrices administrativas, de forma rápida, sencilla, ágil y flexible, a fines de generar reportes para la toma decisiones.</p>
+        <p>Además, formo parte de un <strong>grupo de investigación multidisciplinario</strong> que estudia casos de crímenes de cuello blanco. Junto a profesionales de la abogacía, sociología y antropología, analizo y brindo una opinión técnica económica en casos complejos de lavado de activos, tráfico de personas, y criptoestafas como los esquemas Ponzi. Mi rol como **perito** lo realizo por pura pasión y no con fines económicos, aplicando las incumbencias profesionales otorgadas por el Consejo Profesional de Ciencias Económicas para elaborar peritajes financieros y económicos.</p>
+    </section>
+
+    <!-- Sección Habilidades Blandas -->
+    <section id="habilidades-blandas" class="seccion">
+        <h2>💡 Habilidades Blandas</h2>
+        <ul class="lista-habilidades">
+            <li>Predisposición al aprendizaje</li>
+            <li>Proactividad</li>
+            <li>Gestión del tiempo</li>
+            <li>Polivalencia</li>
+        </ul>
+    </section>
+
+    <!-- Sección Herramientas Técnicas -->
+    <section id="herramientas-tecnicas" class="seccion herramientas-con-flotantes">
+        <h2>🛠️ Herramientas Técnicas</h2>
+        <div class="lista-herramientas">
+            <span>Python</span>
+            <span>Power BI</span>
+            <span>Excel</span>
+            <span>Visual Studio Code</span>
+            <span>GitHub</span>
+        </div>
+        <!-- Contenedor para las imágenes flotantes -->
+        <div class="herramientas-contenedor-flotantes">
+            <img src="phyton.jpg" alt="Logo de Python" class="flotante-interno" style="--i: 0;">
+            <img src="power-bi-vector-logo-2022.png" alt="Logo de Power BI" class="flotante-interno" style="--i: 1;">
+            <img src="microsoft-excel.png" alt="Logo de Microsoft Excel" class="flotante-interno" style="--i: 2;">
+            <img src="vs_code_icon.jpeg" alt="Logo de VS Code" class="flotante-interno" style="--i: 3;">
+            <img src="logotipo-de-github.png" alt="Logo de GitHub" class="flotante-interno" style="--i: 4;">
+        </div>
+    </section>
+
+    <!-- Sección Proyectos -->
+    <section id="proyectos" class="seccion">
+        <h2>📂 Proyectos</h2>
+        
+        <!-- Proyecto 1: Video -->
+        <div id="proyecto-video" class="proyecto-card">
+            <h3>Proyecto 1: Sistema de Inventario en Python</h3>
+            <p><strong>Descripción:</strong> Video que demuestra la implementación de un sistema de inventario en tiempo real con Python para procesar directrices administrativas y generar reportes para la toma de decisiones.</p>
+            <video controls>
+                <source src="proyecto1_video.mp4" type="video/mp4">
+                Tu navegador no soporta el tag de video.
+            </video>
+        </div>
+        
+        <!-- Proyecto 2: Archivero -->
+        <div id="proyecto-archivero" class="proyecto-card">
+            <h3>Proyecto 2: Casos de Crímenes de Cuello Blanco</h3>
+            <p><strong>Descripción:</strong> Archivero de documentos que demuestran mi trabajo en el grupo de investigación de casos de cuello blanco.</p>
+            <div class="archivero">
+                <a href="vicente_analisis.xlsx" target="_blank" class="enlace-archivo">📊 Análisis financiero</a>
+                <a href="imagen_pnj.jpg" target="_blank" class="enlace-archivo">🖼️ Imagen PNJ</a>
+                <a href="cripto_estafas.pdf" target="_blank" class="enlace-archivo">📄 Criptoactivos (PDF)</a>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<!-- Footer -->
+<footer class="footer">
+    <p>© 2025 Edgardo Lorenzo | ✉ <a href="mailto:edgardojoselorenzo@gmail.com">edgardojoselorenzo@gmail.com</a> | 🔗 <a href="https://www.linkedin.com/in/edgardo-lorenzo-190461243/" target="_blank">LinkedIn</a></p>
+</footer>
+
+</body>
+</html>
