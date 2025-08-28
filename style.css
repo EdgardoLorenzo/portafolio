@@ -64,22 +64,6 @@ body {
     gap: 20px;
 }
 
-.profile-pic-container {
-    width: 250px;
-    height: 250px;
-    border-radius: 10px;
-    overflow: hidden;
-    border: 5px solid var(--verde);
-    box-shadow: 0 0 20px rgba(46, 204, 113, 0.6);
-}
-
-.profile-pic {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    object-position: center;
-}
-
 .header-text {
     text-align: center;
 }
@@ -113,8 +97,13 @@ body {
 }
 
 @keyframes movimiento-sutil {
-    0% { transform: translateX(-5px); }
-    100% { transform: translateX(5px); }
+    0% {
+        transform: translateX(-5px);
+    }
+
+    100% {
+        transform: translateX(5px);
+    }
 }
 
 @media (min-width: 600px) {
@@ -218,8 +207,13 @@ body {
 }
 
 @keyframes cadena-animacion {
-    0% { transform: translateX(100vw) translateY(-50%); }
-    100% { transform: translateX(-100%) translateY(-50%); }
+    0% {
+        transform: translateX(120vw) translateY(-50%);
+    }
+
+    100% {
+        transform: translateX(-120vw) translateY(-50%);
+    }
 }
 
 /* Responsive Design */
@@ -228,16 +222,15 @@ body {
         flex-direction: column;
         text-align: center;
     }
-    .profile-pic-container {
-        width: 150px;
-        height: 150px;
-    }
+
     .titulo-animado {
         font-size: 1.8rem;
     }
+
     .main-content {
         padding: 10px;
     }
+
     #menu-flotante {
         top: auto;
         bottom: 20px;
@@ -249,6 +242,7 @@ body {
         gap: 10px;
         padding: 10px;
     }
+
     .flotante-interno {
         --tamano: 120px;
         width: var(--tamano);
@@ -256,7 +250,8 @@ body {
 }
 
 /* Carrusel solo en Desktop y Móvil Horizontal */
-@media (min-width: 601px), (max-width: 600px) and (orientation: landscape) {
+@media (min-width: 601px),
+(max-width: 600px) and (orientation: landscape) {
     .herramientas-con-flotantes {
         height: 350px;
         overflow: hidden;
@@ -284,6 +279,7 @@ body {
         width: var(--tamano);
         animation: cadena-animacion 40s linear infinite;
         animation-delay: calc(var(--i) * -8s);
+        left: calc(var(--i) * 250px); /* separación horizontal */
     }
 }
 
@@ -294,17 +290,56 @@ body {
     border-radius: 10px;
     margin-top: 20px;
     border: 1px solid var(--verde);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.proyecto-card:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 14px 25px rgba(0, 0, 0, 0.6);
+    animation: rebote-suave 0.8s ease-out;
+}
+
+/* Rebote más exagerado */
+@keyframes rebote-suave {
+    0%   { transform: translateY(-12px); }
+    30%  { transform: translateY(-2px); }
+    50%  { transform: translateY(-10px); }
+    70%  { transform: translateY(-4px); }
+    85%  { transform: translateY(-8px); }
+    100% { transform: translateY(-12px); }
+}
+
+/* Efecto en móviles (tap = :active) */
+@media (hover: none) {
+    .proyecto-card:active {
+        transform: translateY(-12px);
+        box-shadow: 0 14px 25px rgba(0, 0, 0, 0.6);
+        animation: rebote-suave 0.8s ease-out;
+    }
 }
 
 .proyecto-card h3 {
     color: var(--verde);
 }
 
+/* Video Responsive */
 .proyecto-card video {
     width: 100%;
-    border-radius: 8px;
-    margin-top: 20px;
+    max-width: 800px;
+    height: auto;
+    display: block;
+    margin: 20px auto;
+    border-radius: 12px;
     border: 2px solid var(--verde);
+    box-shadow: 0 0 15px rgba(46, 204, 113, 0.3);
+}
+
+/* Ajuste en móviles */
+@media (max-width: 600px) {
+    .proyecto-card video {
+        max-width: 100%;
+        border-radius: 8px;
+    }
 }
 
 .archivero {
@@ -314,7 +349,14 @@ body {
     justify-content: center;
 }
 
-.enlace-archivo {
+.botones-proyecto {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+}
+
+.boton-pdf {
     background-color: var(--negro-claro);
     color: var(--verde);
     padding: 10px 20px;
@@ -324,7 +366,7 @@ body {
     transition: all 0.3s ease;
 }
 
-.enlace-archivo:hover {
+.boton-pdf:hover {
     background-color: var(--verde);
     color: var(--negro-oscuro);
     transform: translateY(-3px);
@@ -352,4 +394,44 @@ body {
 
 .footer a:hover {
     color: var(--blanco);
+}
+
+/* === Hero foto: oval, tamaño balanceado y filtro blanco y negro === */
+.profile-pic-container.hero-oval {
+    max-width: 700px;       /* Tamaño balanceado al lado del título */
+    height: auto;           /* Mantiene proporción */
+    margin: 0;
+    overflow: hidden;
+    border: none;
+    box-shadow: none;
+    position: relative;
+    clip-path: ellipse(500% 65% at 50% 50%);
+}
+
+.profile-pic.hero-wide {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(100%) contrast(110%) brightness(95%);
+}
+
+.profile-pic-container.hero-oval.bounce {
+    animation: rebote-hero 6s ease-in-out infinite;
+}
+
+@keyframes rebote-hero {
+    0%, 100% { transform: translateY(0); }
+    50%      { transform: translateY(-6px); }
+}
+
+@media (hover: hover) {
+    .profile-pic-container.hero-oval.bounce:hover {
+        animation-duration: 3.5s;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .profile-pic-container.hero-oval.bounce {
+        animation: none;
+    }
 }
