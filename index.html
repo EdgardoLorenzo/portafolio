@@ -21,7 +21,6 @@
 
     <header class="header">
         <div class="header-content">
-            <!-- Foto con efecto tipo dólar -->
             <div class="profile-pic-container hero-oval bounce">
                 <img src="edgardo.png" alt="Foto de Edgardo Lorenzo" class="profile-pic hero-wide">
             </div>
@@ -45,7 +44,6 @@
         <section id="citas-de-autores" class="seccion">
             <h2>📝 Citas de Autores</h2>
 
-            <!-- Sun Tzu -->
             <blockquote style="text-align: center; font-style: italic; margin-top: 30px; color: var(--verde);">
                 <div style="display: flex; flex-direction: column; align-items: center; gap: 10px;">
                     <img src="suntsu.jpg" alt="Retrato de Sun Tzu" style="width: 80px; height: 80px; border-radius: 50%; border: 2px solid var(--blanco); object-fit: cover; object-position: top;">
@@ -54,7 +52,6 @@
                 <cite style="display: block; margin-top: 5px;">— Sun Tzu</cite>
             </blockquote>
 
-            <!-- Michael Porter -->
             <blockquote style="text-align: center; font-style: italic; margin-top: 30px; color: var(--verde);">
                 <div style="display: flex; flex-direction: column; align-items: center; gap: 10px;">
                     <img src="Porter.jpg" alt="Retrato de Michael Porter" style="width: 80px; height: 80px; border-radius: 50%; border: 2px solid var(--blanco); object-fit: cover; object-position: top;">
@@ -63,7 +60,6 @@
                 <cite style="display: block; margin-top: 5px;">— Michael Porter</cite>
             </blockquote>
 
-            <!-- Peter Senge -->
             <blockquote style="text-align: center; font-style: italic; margin-top: 20px; color: var(--verde);">
                 <div style="display: flex; flex-direction: column; align-items: center; gap: 10px;">
                     <img src="peter senge.jpg" alt="Retrato de Peter Senge" style="width: 80px; height: 80px; border-radius: 50%; border: 2px solid var(--blanco); object-fit: cover; object-position: top;">
@@ -72,7 +68,6 @@
                 <cite style="display: block; margin-top: 5px;">— Peter Senge</cite>
             </blockquote>
 
-            <!-- Henry Mintzberg -->
             <blockquote style="text-align: center; font-style: italic; margin-top: 20px; color: var(--verde);">
                 <div style="display: flex; flex-direction: column; align-items: center; gap: 10px;">
                     <img src="miztberg.jpg" alt="Retrato de Henry Mintzberg" style="width: 80px; height: 80px; border-radius: 50%; border: 2px solid var(--blanco); object-fit: cover; object-position: top;">
@@ -81,7 +76,6 @@
                 <cite style="display: block; margin-top: 5px;">— Henry Mintzberg</cite>
             </blockquote>
 
-            <!-- Idalberto Chiavenato -->
             <blockquote style="text-align: center; font-style: italic; margin-top: 20px; color: var(--verde);">
                 <div style="display: flex; flex-direction: column; align-items: center; gap: 10px;">
                     <img src="ciavenato.jpg" alt="Retrato de Idalberto Chiavenato" style="width: 80px; height: 80px; border-radius: 50%; border: 2px solid var(--blanco); object-fit: cover; object-position: top;">
@@ -90,7 +84,6 @@
                 <cite style="display: block; margin-top: 5px;">— Idalberto Chiavenato</cite>
             </blockquote>
 
-            <!-- Ludwig von Bertalanffy -->
             <blockquote style="text-align: center; font-style: italic; margin-top: 20px; color: var(--verde);">
                 <div style="display: flex; flex-direction: column; align-items: center; gap: 10px;">
                     <img src="ludwig von.jpg" alt="Retrato de Ludwig von Bertalanffy" style="width: 80px; height: 80px; border-radius: 50%; border: 2px solid var(--blanco); object-fit: cover; object-position: top;">
@@ -135,10 +128,15 @@
             <div id="proyecto-video" class="proyecto-card proyecto-card-interactive">
                 <h3>Proyecto 1: Sistema de Inventario en Python</h3>
                 <p><strong>Descripción:</strong> Video que demuestra la implementación de un sistema de inventario en tiempo real con Python para procesar directrices administrativas y generar reportes para la toma de decisiones.</p>
-                <video controls>
-                    <source src="Video-Proyecto 1.mp4" type="video/mp4">
-                    Tu navegador no soporta el tag de video.
-                </video>
+                <div class="video-container">
+                    <iframe
+                        src="https://www.youtube.com/embed/-xFvv_05-Qg"
+                        title="Video del Sistema de Inventario"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
+                    </iframe>
+                </div>
             </div>
 
             <div id="proyecto-cuello-blanco" class="proyecto-card proyecto-card-interactive">
