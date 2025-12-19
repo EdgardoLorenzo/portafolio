@@ -280,6 +280,7 @@ body {
         animation: cadena-animacion 40s linear infinite;
         animation-delay: calc(var(--i) * -8s);
         left: calc(var(--i) * 250px); /* separación horizontal */
+        object-fit: contain;
     }
 }
 
